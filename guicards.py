@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog
 
-
+#dev branch
 terms=[]
 defs=[]
 dict={}
@@ -16,14 +16,14 @@ def add():
     termEntry.delete(0, END)
     defEntry.delete(0, END)
 
-    
+
 
 def done():
 
     for i in range(len(terms)):
         dict[terms[i]] = defs[i]
 
-    
+
 
     filename = filedialog.asksaveasfile(title="Save file", mode="w",defaultextension=".txt")
     name=filename.name
@@ -31,7 +31,7 @@ def done():
     f = open(name,"w+")
     f.write(str(dict))
     f.close()
-    
+
 
 
 root = Tk()
