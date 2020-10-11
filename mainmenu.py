@@ -7,6 +7,16 @@ terms=[]
 defs=[]
 dict={}
 
+def loadSet():
+    showSet = Toplevel()
+    showSet.geometry("500x300")
+    defLabel = Label(showSet, text="test")
+    defLabel.pack()
+
+    name = root.filename = filedialog.askopenfilename(title="Select A File", filetypes=((".txt files", "*.txt"),("All files", "*.*")))
+
+
+
 def add():
 
     terms.append(termEntry.get())
@@ -15,14 +25,14 @@ def add():
     termEntry.delete(0, END)
     defEntry.delete(0, END)
 
-    
+
 
 def done():
 
     for i in range(len(terms)):
         dict[terms[i]] = defs[i]
 
-    
+
 
     filename = filedialog.asksaveasfile(title="Save file", mode="w",defaultextension=".txt")
     name=filename.name
@@ -35,7 +45,7 @@ def done():
 def openNew():
     newSet = Toplevel()
     newSet.title("Create a new set")
-    
+
     global termEntry
     global defEntry
 
@@ -57,7 +67,7 @@ root = Tk()
 
 root.geometry("300x300")
 
-loadButton = Button(root,text="Load")
+loadButton = Button(root,text="Load",command=loadSet)
 loadButton.pack()
 
 newButton = Button(root,text="Create a new set",command=openNew)

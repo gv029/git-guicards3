@@ -1,14 +1,13 @@
 from tkinter import *
-from tkinter import ttk
+from PIL import ImageTk,Image
 from tkinter import filedialog
 
-
+#dev branch
 root = Tk()
 
-mySet = filedialog.askopenfile(mode="r")
-info = mySet.read()
-print(info)
+root.filename = filedialog.askopenfilename(title="Select A File", filetypes=(("jpg files", "*.jpg"),("all files", "*.*")))
 
-infoLabel = 
+
+
 
 root.mainloop()
